@@ -28,10 +28,10 @@ for entry in data:
             print("Adding vip %s in %s" % (vip, host))
             newentry = {'ip': {'ip_prefix': vip, 'ip_prefix_len': 32}, 'address_mode': 'active-standby'}
             if vrrpid is not None:
-                 virtual_router_id_hex = format(int(vrrpid), 'x')
-                 if len(virtual_router_id_hex) == 1:
-                     virtual_router_id_hex = "0%s" % virtual_router_id_hex
-                 mac = "00:00:5e:00:01:%s" % virtual_router_id_hex
+                virtual_router_id_hex = format(int(vrrpid), 'x')
+                if len(virtual_router_id_hex) == 1:
+                    virtual_router_id_hex = "0%s" % virtual_router_id_hex
+                mac = "00:00:5e:00:01:%s" % virtual_router_id_hex
             if mac is not None:
                 newentry['mac'] = mac
             allowed_address_pairs.append(newentry)
