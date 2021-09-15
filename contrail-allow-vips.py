@@ -3,7 +3,7 @@ import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-host_ip = os.environ['HOST_IP']
+host_ip = os.environ.get('HOST_IP', '127.0.0.1')
 vips = [os.environ['IP']]
 vrrpid = os.environ.get('ID')
 mac = os.environ.get('MAC')
